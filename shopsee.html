@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSee</title>
+    <link rel="stylesheet" href="Shopsee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class='container'>
+            <h3>Shop<span>See</span></h3>
+
+            <div class="input-content">
+                <i class="ri-search-line"></i>
+                <input type="text" id="inputbox" placeholder="Search for products...">
+            </div>
+
+            <div class="cart-content">
+                <button id="cartbtn"><i class="ri-shopping-bag-line"></i><p>Cart</p></button>
+                <button id="counter" disabled>0 Items</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="filter-bar">
+        <div class="container">
+            <div class="bar">
+
+                <div class="categories-filter">
+                    <h3>FILTER</h3>
+                    <select name="categories" id="categories">
+                        <option value="all">All Categories</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="fragrances">Fragrances</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="home-decoration">Home Decoration</option>
+                    </select>
+                </div>
+
+                <div class="sorting-filter">
+                    <h3>SORT</h3>
+                    <select name="sorting" id="sorting">
+                        <option value="">Sort by</option>
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="A-Z">A-Z</option>
+                        <option value="Z-A">Z-A</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-container" class="cart-container">
+
+        <div class="top-content">
+            <h3>Your Cart</h3>
+            <i id="close-cart-container" class="ri-close-large-fill"></i>
+        </div>
+
+        <div class="middle">
+            <div id="cart-list" class="middle-content"></div>
+        </div>
+
+        <div class="bottom-content">
+            <div class="cart-calculation">
+                <h3>Total</h3>
+                <h3 id="total-price">$0.00</h3>
+            </div>
+            <button id="checkoutbtn">
+                Proceed to Checkout <i class="ri-arrow-right-line"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="left-content">
+                    <h3>Discover<br><span>Everything</span> You Love</h3>
+                    <p>From beauty to furniture — shop thousands of curated products at the best prices.</p>
+                </div>
+
+                <div class="right-content">
+                    <h3>400+</h3>
+                    <p>Products Available</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="main">
+        <h3 id="main-section-heading">All Products</h3>
+        <div class="container">
+            <div id="product-container" class="product-contaner"></div>
+        </div>
+    </section>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="shopsee.js"></script>
+</body>
+</html>
