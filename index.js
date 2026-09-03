@@ -39,7 +39,7 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let AllProducts = [];
 
 
-async function FethData() {
+async function fetchData() {
     container.innerHTML = 'Loading...';
 
     try {
@@ -48,22 +48,7 @@ async function FethData() {
 
         AllProducts = data.products;
 
-        let html = AllProducts.map((item) => {
-            return `
-                <div class='card'>
-                    <div class='card-info-content'>
-                        <img src='${item.thumbnail}' alt='${item.title}' loading='lazy'/>
-                        <h3>${item.category || ''}</h3>
-                        <p>${item.title}</p>
-                    </div>
-                    <div class='cart-bottom-content'>
-                        <h3>$${item.price}</h3>
-                        <button onclick="Addtocart(${item.id})">+ Add</button>
-                    </div>
-                </div>`;
-        });
-
-        container.innerHTML = html.join('');
+       renderProducts(AllProducts)
 
     } catch (err) {
         container.innerHTML = 'Failed to load products.';
@@ -73,7 +58,7 @@ async function FethData() {
 
 
 
-FethData();
+fetchData();
 
 function renderProducts(products) {
     if (products.length === 0) {
